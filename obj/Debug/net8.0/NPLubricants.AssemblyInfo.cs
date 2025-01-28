@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NPLubricants")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d204573a7f0f03dc0c3cd0ae674efe7506bbe6ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("NPLubricants")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NPLubricants")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
