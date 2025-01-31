@@ -6,3 +6,6 @@ NPLubricants/NPLubricants.csproj.user
 .vs
 NPLubricants/NPLubricants.csproj.user
 NPLubricants/NPLubricants/PublishProfiles
+/bin
+bin/Debug/net8.0/NPLubricants.dll
+*.exe
