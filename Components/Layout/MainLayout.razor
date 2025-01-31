@@ -1,79 +1,25 @@
 ﻿@inherits LayoutComponentBase
 
-<style>
-    .topBar{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:0 20px;
-        height:3.5rem;
-        position:sticky;
-        top:0;
-        box-shadow:0 0 4px rgba(0,0,0,0.3);
-        background-color:white;
-        z-index:1000;
-    }
-    .navItem{
-        display:flex;
-        gap:30px;
-        align-items:center;
-    }
-    .navItem a{
-        color:black;
-        font-weight:600;
-        font-size:15px;
-        transition:all 0.3s ease-in-out;
-        text-decoration:none;
-    }
+<link href="css/navbar.css" rel="stylesheet" />
+<div class="page" @onclick="closeMenu">
+	@* <div class="sidebar">
+	<NavMenu />
+	</div>
+	*@
+	<div class="topBar">
+		<Navbar showNav="nav" OnShowNavChanged="HandleShowNavChanged" />
+	</div>
+	<main>
 
-        .navItem a:hover {
-                color: #153865;
-                text-decoration: underline;
-                text-decoration-thickness: 3px;
-                text-underline-offset: 5px;
-        }
-    .topBar .navItem .active{
-        color: #153865;
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
-        text-underline-offset: 5px;
-    }
-    .topBar .Logo{
-        height:90%;
-    }
-
-    .topBar .Logo img {
-        height: 100%;
-        object-fit:fill;
-    }
-    .icon{
-        height:20px;
-        cursor:pointer;
-       
-    }
-    .icon img{
-       height:100%;
-       object-fit:fill;
-    }
-</style>
-<div class="page">
-    @* <div class="sidebar">
-        <NavMenu />
-    </div>
- *@
- <div class="topBar">
-     <Navbar />
- </div>
-    <main>
-        
-        <article class="content px-2">
-            @Body
-        </article>
-    </main>
+		<article class="content px-2">
+			@Body
+		</article>
+	</main>
 </div>
 
 <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
+	An unhandled error has occurred.
+	<a href="" class="reload">Reload</a>
+	<a class="dismiss">🗙</a>
 </div>
+

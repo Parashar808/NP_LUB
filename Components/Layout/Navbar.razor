@@ -1,4 +1,5 @@
-﻿<div class="Logo">
+﻿
+<div class="Logo">
 	<img src="images/logo.png" alt="logo" />
 </div>
 <div class="navItem">
@@ -21,6 +22,46 @@
 		Contacts
 	</NavLink>
 </div>
+<div class="menu" @onclick:stopPropagation="true">
+	<img @onclick="ShowNavMenu" src="images/more.png" />
+	@if (showNav)
+	{
+		<div class="mobileNavItem">
+			<div @onclick="CloseNavMenu">
+				<NavLink href="" Match="NavLinkMatch.All">
+					Home
+				</NavLink>
+			</div>
+			<div @onclick="CloseNavMenu">
+				<NavLink href="products">
+					Products
+				</NavLink>
+			</div>
+			<div @onclick="CloseNavMenu">
+				<NavLink href="services">
+					Services
+				</NavLink>
+			</div>
+			<div @onclick="CloseNavMenu">
+				<NavLink href="aboutus">
+					About Us
+				</NavLink>
+			</div>
+			<div @onclick="CloseNavMenu">
+				<NavLink href="partnership">
+					Partnership
+				</NavLink>
+			</div>
+			<div @onclick="CloseNavMenu">
+				<NavLink href="contacts">
+					Contacts
+				</NavLink>
+			</div>
+		</div>
+	}
+</div>
+
+
 <div class="d-flex align-items-center">
 	<div class="d-flex align-items-center icon">
 		<img src="images/map.png" />
