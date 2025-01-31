@@ -4,13 +4,53 @@
 
 
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-    @foreach (var item in productList.GetProducts())
-    {
-        <div class="product-card">
-            <img src="images/@item.PhotoUrl" alt="@item.Name" />
-            <span class="product-name">@item.Name</span>
-            <span class="product-description">@item.Description</span>
+<div>
+    
+        <div style="width:100%;">
+            <h4 style="text-align: center">Our Premium Products</h4>            
         </div>
-    }
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        @foreach (var item in productList.GetProducts().FindAll(x => x.IsFeaturedProduct))
+        {
+            <div class="product-card">
+                <img src="images/@item.PhotoUrl" alt="@item.Name" />
+                <span class="product-name">@item.Name</span>
+                <span class="product-description">@item.Description</span>
+            </div>
+        }
+    </div>
+
+</div>
+
+<div>
+        <div style="width:100%;">
+            <h4 style="text-align: center">All Products</h4>
+        </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        @foreach (var item in productList.GetProducts())
+        {
+            <div class="product-card">
+                <img src="images/@item.PhotoUrl" alt="@item.Name" />
+                <span class="product-name">@item.Name</span>
+                <span class="product-description">@item.Description</span>
+            </div>
+        }
+    </div>
+</div>
+
+<div>
+        <div style="width:100%;">
+            <h4 style="text-align: center">Our Featured Products</h4>
+        </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        @foreach (var item in productList.GetProducts().FindAll(x => x.IsFeaturedProduct))
+        {
+            <div class="product-card">
+                <img src="images/@item.PhotoUrl" alt="@item.Name" />
+                <span class="product-name">@item.Name</span>
+                <span class="product-description">@item.Description</span>
+            </div>
+        }
+    </div>
+
 </div>
