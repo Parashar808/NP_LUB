@@ -9,3 +9,10 @@ NPLubricants/NPLubricants/PublishProfiles
 /bin
 bin/Debug/net8.0/NPLubricants.dll
 *.exe
+/bin
+/bin/Debug/net8.0
+bin/Debug/net8.0/NPLubricants.dll
+bin/Debug/net8.0/NPLubricants.exe
+bin/Debug/net8.0/appsettings.Development.json
+bin/Debug/net8.0/NPLubricants.staticwebassets.runtime.json
+bin/Debug/net8.0/NPLubricants.runtimeconfig.json
