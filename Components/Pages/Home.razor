@@ -1,6 +1,72 @@
 ﻿@page "/"
 
-<PageTitle>NP Home Page</PageTitle>
+<PageTitle>NP Home</PageTitle>
 
-<h1>NP LUBRICANTS</h1>
+
+<div id="carouselExample" class="carousel slide carousel-fade" style="height:90vh" data-bs-ride="carousel">
+	<div class="carousel-inner h-100">
+		<div class="carousel-item active d-flex align-items-center justify-content-center h-100" data-bs-interval="2000">
+			<img src="Images/CAMERA.jpg" class="d-block h-100" alt="...">
+		</div>
+		<div class="carousel-item d-flex align-items-center justify-content-center h-100" data-bs-interval="2000">
+			<img src="Images/LAPTOP.jpg" class="d-block h-100" alt="...">
+		</div>
+		<div class="carousel-item d-flex align-items-center justify-content-center h-100" data-bs-interval="2000">
+			<img src="Images/KEYBOARD.jpg" class="d-block h-100" alt="...">
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+<div class="AbouutText px-5 pt-3">
+	<div class="left">
+		<span style="color:var(--primary-color)">
+			PREMIUM QUALITY
+		</span>
+		<span style="color:var(--secondary-color)">
+			STARTS WITH
+		</span>
+		<div class="d-flex align-items-center">
+			<span style="color:var(--secondary-color)">N</span>
+			<span style="color:var(--primary-color)">P.</span>
+		</div>
+	</div>
+	<div class=" right">
+		<p>
+			Welcome to NP Multipurpose Industries Pvt. Ltd. – Your Trusted Partner for Premium <b>Engine Oil and Lubricants</b>!
+		</p>
+		<p>We specialize in providing high-quality <b>engine oils and lubricants</b> designed to enhance your vehicle's performance and longevity. Whether you're maintaining your car, motorcycle, or industrial machinery, our products are engineered to deliver superior <b>protection, efficiency, and reliability.</b></p>
+		<button class="btn btn-primary"><img src="images/right.png" /> Learn More</button>
+	</div>
+</div>
+<div class="ourProducts pt-3 px-5">
+	<h3 class="Title text-center">Our Products</h3>
+	<p class="text-center">Our Best Selling Products</p>
+	<div class="row mt-2">
+		@for ( var i = 0; i <= 3; i++)
+		{
+			<div class=" col-md-3">
+				<div class="card">
+					<img src="Images/MONITOR.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Some quick example content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		}
+
+
+	</div>
+	<div class="d-flex align-items-center justify-content-center mt-3">
+		<button class="btn btn-primary"><img src="images/right.png" /> View All Products</button>
+	</div>
+	
+</div>
 
