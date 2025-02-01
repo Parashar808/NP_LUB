@@ -1,0 +1,233 @@
+﻿@page "/TestimonialPage"
+
+
+<style>
+    /* General Styles */
+    
+
+    h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: #f8f9fa;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #6c757d;
+        margin-bottom: 30px;
+    }
+
+    .testimonials-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 320px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+
+    .testimonial-photo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: -40px;
+        border: 3px solid white;
+    }
+
+    .company {
+        font-size: 14px;
+        color: #777;
+        margin-top: -5px;
+        font-weight: bold;
+    }
+
+    blockquote {
+        font-style: italic;
+        color: #555;
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .valuable-client-section {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: #f8f9fa;
+    }
+
+    .valuable-client-swiper {
+        max-width: 900px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .valuable-client-card {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 20px;
+    }
+
+    .valuable-client-photo {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 15px 0 0 15px;
+    }
+
+    .valuable-client-content {
+        padding: 30px;
+        text-align: left;
+    }
+
+        .valuable-client-content h3 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .valuable-client-content .company {
+            font-size: 16px;
+            font-weight: bold;
+            color: #777;
+        }
+
+        .valuable-client-content .description {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+    /* Swiper Navigation Button Styling */
+    .swiper-button-next,
+    .swiper-button-prev {
+        background-color: rgba(0, 123, 255, 0.7); /* Light blue background */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        opacity: 0.8;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px; /* Adjust arrow size */
+        }
+
+    .swiper-button-next {
+        content: '→'; /* Right arrow symbol */
+    }
+
+    .swiper-button-prev {
+        content: '←'; /* Left arrow symbol */
+    }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background-color: rgba(0, 123, 255, 1); /* Darker blue when hovered */
+            transform: scale(1.1); /* Slight zoom effect on hover */
+            opacity: 1; /* Make the button fully opaque when hovered */
+        }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for the buttons */
+    }
+
+
+</style>
+
+<div class="testimonials-section">
+    <h2>WE BELIEVE PEOPLE WE TRUST</h2>
+    <p class="subtitle">What Our Customers Say</p>
+
+    <div class="testimonials-container">
+        @foreach (var testimonial in testimonials.GetTestimonials())
+        {
+            <div class="testimonial-card">
+                <img src="images/@testimonial.PhotoUrl" alt="@testimonial.CustomerName" class="testimonial-photo" />
+                <h3>@testimonial.CustomerName</h3>
+                <p class="company">@testimonial.CompanyName</p>
+                <blockquote>"@testimonial.Description"</blockquote>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Most Valuable Clients Carousel -->
+<div class="valuable-client-section">
+    <h2>Our Most Valuable Clients</h2>
+
+    <div class="swiper valuable-client-swiper">
+        <div class="swiper-wrapper">
+            @foreach (var client in testimonials.MostValuableTestimonials())
+            {
+                <div class="swiper-slide valuable-client-card">
+                    <img src="images/@client.PhotoUrl" alt="@client.CustomerName" class="valuable-client-photo" />
+                    <div class="valuable-client-content">
+                        <h3>@client.CustomerName</h3>
+                        <p class="company">@client.CompanyName</p>
+                        <p class="description">"@client.Description"</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- Swiper Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".valuable-client-swiper", {
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            }
+        });
+    });
+</script>
